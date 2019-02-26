@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="raceService" class="beans.RaceServiceImp">
+    </bean>
+
+    <bean id="breed1" class="beans.Breed">
+        <property name="name" value="Orlovsky"/>
+    </bean>
+
+    <bean id="breed2" class="beans.Breed">
+        <property name="name" value="Arab racing"/>
+    </bean>
+
+    <bean id="horse1" class="beans.Horse">
+        <constructor-arg value="Jeck"/>
+        <constructor-arg value="100"/>
+        <constructor-arg value="100"/>
+        <constructor-arg ref="breed1"/>
+    </bean>
+
+    <bean id="horse2" class="beans.Horse">
+        <constructor-arg value="Lana Quin"/>
+        <constructor-arg value="90"/>
+        <constructor-arg value="110"/>
+        <constructor-arg ref="breed1"/>
+    </bean>
+
+    <bean id="horse3" class="beans.Horse">
+        <constructor-arg value="Artur"/>
+        <constructor-arg value="95"/>
+        <constructor-arg value="105"/>
+        <constructor-arg ref="breed2"/>
+    </bean>
+
+    <bean id="track1" class="beans.Track">
+        <constructor-arg value="London track"/>
+        <constructor-arg value="750"/>
+    </bean>
+
+    <bean id="race" class="beans.RaceServiceImp">
+        <constructor-arg ref="track1"/>
+    </bean>
+
+
+</beans>
